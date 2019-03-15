@@ -1,0 +1,7 @@
+
+
+This version will work on all cpus, but was compiled with support for old/ancient cpus.
+Should work on any cpu down to a pentium 2. It runs slightly slower than the normal version as
+it does not use SSE instructions/prefetching.
+
+Jim.

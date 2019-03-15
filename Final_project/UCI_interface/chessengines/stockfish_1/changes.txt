@@ -1,0 +1,57 @@
+This is Stockfish 1.9.1
+
+
+update: (1.9.1)
+
+Stockfish 1.9.1 bug fix release for Chess960
+
+This is just a bug fix release to restore chess960 support under some GUIs.
+
+There is NO functional change and NO speed change, so absolutely NO
+ELO change from 1.9 and people that has already tested 1.9 could
+safely keep test results when swithcing to 1.9.1.
+
+
+(1.9)
+
+As a starter we expect just a very small increment if any.
+
+Although a lot of stuff has changed from 1.8, as you can see from the
+diffstat below:
+
+47 files changed, 2143 insertions(+), 2629 deletions(-)
+
+
+We have mainly removed evaluation stuff that proved to be almost
+useless, we have now access to a better hardware facility(*) and we
+are able to test with a better resolution our  evaluation code so to
+remove old stuff that we never dared to touch.
+
+Apart from that the increment is really silly at fast time controls
+(as we normally test), perhaps we could have some surprises (hopefully
+not bad ones) at longer TC where the new time management code by Joona
+could kick in with a bit of luck.
+
+Another change from 1.8 is that we lowered the aggressiveness of both
+LMR and pruning, we will se if this will pay at longer TC, at fast TC
+change is almost zero....
+
+
+(*) Yes we have now access through ssh to some boxes kindly made
+available by Aleks Peshkov (I don't know if he wants to be named here,
+I hope yes ;-)  ), this is perhaps the best thing that occurred to us
+in the last months because we are now able to test each change with
+5K-7K games of resolution and this really opens up new possibilities.
+The first and IMHO most important asset you gain is to be able to
+retest all your old code and finally detect what works from what it
+seems to work, but actually does nothing. The biggest part of almost
+500 lines of code reductions comes from that.
+
+As usual a big thank you to all the people that helped us, starting
+from the always very kind Jim and then to all the people that
+contributed with patches and ideas also privately (they know who they
+are).
+
+Have fun
+Stockfish team
+
